@@ -1,0 +1,263 @@
+/*********************************************************************
+ * Created by deming-su on 2017-08-17
+ *********************************************************************/
+
+@import "../common";
+
+/* 用户管理样式 ---start--- */
+
+/* 自定义颜色 */
+@electricBg: #F3F5F6;
+@electricSplit: #E1E7E9;
+@electricBlue: #00A2CA;
+@electricTitle: #F6F8F8;
+
+/* 重写样式 */
+.ivu-form-item {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.ivu-form-item-error-tip {
+  font-size: 12px;
+  padding-top: 2px;
+}
+.electric-mb15 {
+  margin-bottom: 15px;
+}
+
+/* 容器样式 */
+.electric-container {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  >.container {
+    position: relative;
+    height: 100%;
+    /* 左右分区样式 */
+    >.electric-left,
+    >.electric-right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 260px;
+      height: 100%;
+      .bg-color(@electricBg);
+      border-right: solid 1px @electricSplit;
+      z-index: 3;
+      >.box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        &.p15 {
+          padding: 15px;
+        }
+      }
+    }
+    .electric-right {
+      left: 260px;
+      width: auto;
+      right: 0;
+      border-left: none;
+      .bg-color(transparent);
+      z-index: 2;
+    }
+  }
+}
+
+/* form样式 */
+.electric-form-box {
+  padding: 0px 10px;
+}
+
+/* 标题样式 */
+.electric-title {
+  padding: 10px;
+  border-bottom: solid 1px @electricSplit;
+  overflow: hidden;
+  >.txt {
+    font-size: 14px;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+  }
+  >.btn {
+    float: right;
+  }
+}
+
+/* 列表样式 */
+.electric-list {
+  display: block;
+  margin: 0 10px 10px;
+  border-top: solid 1px @electricSplit;
+  border-right: solid 1px @electricSplit;
+  border-bottom: solid 1px @electricSplit;
+  .border-radius();
+  >.item {
+    display: block;
+    border-left: solid 3px @electricSplit;
+    padding: 10px;
+    .bg-color(@white);
+    .touch();
+    .transition();
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    &:last-child {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+    &:hover {
+      border-left-color: rgba(20, 178, 228, 0.4);
+      .bg-color(@electricTitle);
+    }
+    &.active {
+      border-left-color: #14B2E4;
+      .bg-color(@electricTitle);
+    }
+    >.title,
+    >.sub-title {
+      display: block;
+      font-size: 16px;
+      color: @black;
+    }
+    >.sub-title {
+      font-size: 13px;
+      color: @black-light;
+    }
+  }
+}
+
+/* 角落上的字 */
+.electric-corner-icon {
+  display: block;
+  position: relative;
+  height: 45px;
+  margin: -10px -13px 0;
+  &:before {
+    content: '\7535';
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 36px;
+    height: 36px;
+    z-index: 2;
+    font-size: 14px;
+    color: @white;
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: solid 20px @electricBlue;
+    border-right: solid 20px transparent;
+    border-bottom: solid 20px transparent;
+    border-left: solid 20px @electricBlue;
+  }
+}
+
+/* 公司信息标题 */
+.electric-info-title {
+  display: block;
+  position: relative;
+  padding: 15px 0;
+  height: 86px;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 56px;
+    height: 56px;
+    background: url("../../images/customer/company-photo.png") center center / 56px 56px no-repeat;
+  }
+  >.title,
+  >.sub-title {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 34px;
+    padding: 0px 20px 10px 70px;
+    line-height: 24px;
+    font-size: 22px;
+    .color(@black);
+  }
+  >.sub-title {
+    height: 14px;
+    font-size: 14px;
+    >.sub {
+      .color(@black-light);
+    }
+    >.addr {
+      position: relative;
+      .color(@black-deep);
+      >i {
+        font-size: 16px;
+        padding: 0 5px;
+        color: @electricBlue;
+      }
+    }
+  }
+  >.edit-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+/* 编辑字体样式 */
+.electric-edit-icon {
+  font-size: 18px;
+  .touch();
+}
+
+/* 公司信息行样式 */
+.electric-info-row {
+  border-bottom: solid 1px @electricSplit;
+  &:last-child {
+    border-bottom: none;
+  }
+  >.col-cls {
+    padding: 5px 0;
+    >.title,
+    >.desc {
+      display: inline-block;
+      vertical-align: middle;
+      height: 26px;
+      line-height: 26px;
+      .color(@black-light);
+    }
+    >.desc {
+      .color(@black);
+    }
+  }
+}
+
+/* 公司信息模态窗口样式 */
+.electric-info-modal-title {
+  .bg-color(@electricTitle);
+  padding: 10px 15px 8px;
+  margin: -12px -15px 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  >i {
+    float: right;
+    .transition();
+    &.expand {
+      .transform(rotate(180deg));
+    }
+  }
+}
+
+.electric-info-card {
+  height: 38px;
+  overflow: hidden;
+}
+
+/* 用户管理样式 ---end--- */

@@ -1,0 +1,68 @@
+/*********************************************************************
+ * Created by deming-su on 2017/12/30
+ *********************************************************************/
+
+@import "../common";
+
+/* Login component 样式 ---start---*/
+.login-component {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  margin-top: -105px;
+  padding: 20px 30px;
+  border: solid 1px #dcdcdc;
+  border-radius: 4px;
+  z-index: 999;
+  >.title {
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    height: 32px;
+  }
+  >.item {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 38px;
+    border: solid 1px #DCDCDC;
+    .border-radius(4px);
+    overflow: hidden;
+    >.txt {
+      position: absolute;
+      top: 3px;
+      left: 0;
+      height: 20px;
+      width: 38px;
+      font-size: 16px;
+      text-align: center;
+      line-height: 26px;
+      border-right: solid 1px #DCDCDC;
+    }
+    > input {
+      display: block;
+      width: 100%;
+      height: 26px;
+      line-height: 26px;
+      font-size: 16px;
+      text-indent: 8px;
+      padding: 0;
+      margin: 0;
+      outline: none;
+      border: none;
+    }
+  }
+  >.button {
+    display: block;
+    width: 58px;
+    margin: auto;
+    padding: 3px 10px;
+    font-size: 14px;
+    border: solid 1px #dcdcdc;
+    border-radius: 4px;
+    .touch();
+  }
+}
+/* Login component 样式 ---end---*/
